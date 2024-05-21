@@ -1,4 +1,4 @@
-# OnTracck
+# OnTrack
 
 Welcome to OnTrack, a progressive web application aimed at helping you reach your health and fitness goals. This application is built with Deno, Deno Fresh, TypeScript, and Preact.
 

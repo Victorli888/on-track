@@ -5,18 +5,22 @@ import ProteinOverview from "../islands/dashboard-overview/ProteinOverview.tsx";
 import CarbsOverview from "../islands/dashboard-overview/CarbsOverview.tsx";
 import FatsOverview from "../islands/dashboard-overview/FatsOverview.tsx";
 import CaloriesOverview from "../islands/dashboard-overview/CaloriesOverview.tsx";
+import {UtilityBar} from "../islands/UtilityBar.tsx";
 
 export default function Home() {
     const count = useSignal(0);
     return (
         <div className="px-4 py-8 mx-auto bg-[#86efac]">
+            <div>
+                <UtilityBar currentRoute = "/dashboard"/>
+            </div>
             <div className="max-w-screen-md mx-auto flex flex-col items-center justify-center">
                 <img
                     class="my-6"
                     src="/analytics.svg"
                     width="128"
                     height="128"
-                    alt="the Fresh logo: a sliced lemon dripping with juice"
+                    alt="AnalyticsCPU"
                 />
             </div>
             <div className="max-w-screen-md mx-auto flex flex-row items-center justify-center space-x-3">

@@ -14,4 +14,4 @@ node_modules/
 .DS_Store
 
 # Local IDE Data
-.idea
+.ideafresh.gen.ts

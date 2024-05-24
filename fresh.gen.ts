@@ -6,14 +6,9 @@ import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $api_joke from "./routes/api/joke.ts";
 import * as $dashboard from "./routes/dashboard.tsx";
-import * as $food_journal from "./routes/food-journal.tsx";
-import * as $goal_planning from "./routes/goal-planning.tsx";
-import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
 import * as $test_ground from "./routes/test-ground.tsx";
 import * as $Counter from "./islands/Counter.tsx";
-import * as $FoodSearch from "./islands/FoodSearch.tsx";
-import * as $MacrosOverview from "./islands/MacrosOverview.tsx";
 import * as $UtilityBar from "./islands/UtilityBar.tsx";
 import * as $dashboard_overview_CaloriesOverview from "./islands/dashboard-overview/CaloriesOverview.tsx";
 import * as $dashboard_overview_CarbsOverview from "./islands/dashboard-overview/CarbsOverview.tsx";
@@ -27,16 +22,11 @@ const manifest = {
     "./routes/_app.tsx": $_app,
     "./routes/api/joke.ts": $api_joke,
     "./routes/dashboard.tsx": $dashboard,
-    "./routes/food-journal.tsx": $food_journal,
-    "./routes/goal-planning.tsx": $goal_planning,
-    "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
     "./routes/test-ground.tsx": $test_ground,
   },
   islands: {
     "./islands/Counter.tsx": $Counter,
-    "./islands/FoodSearch.tsx": $FoodSearch,
-    "./islands/MacrosOverview.tsx": $MacrosOverview,
     "./islands/UtilityBar.tsx": $UtilityBar,
     "./islands/dashboard-overview/CaloriesOverview.tsx":
       $dashboard_overview_CaloriesOverview,

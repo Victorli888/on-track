@@ -1,6 +1,4 @@
-import MacrosOverview from "../islands/MacrosOverview.tsx";
 import { useSignal } from "@preact/signals";
-import Counter from "../islands/Counter.tsx";
 import ProteinOverview from "../islands/dashboard-overview/ProteinOverview.tsx";
 import CarbsOverview from "../islands/dashboard-overview/CarbsOverview.tsx";
 import FatsOverview from "../islands/dashboard-overview/FatsOverview.tsx";

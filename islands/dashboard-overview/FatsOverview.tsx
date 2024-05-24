@@ -1,6 +1,3 @@
-import { StatusMeter } from '../../components/StatusMeter.tsx';
-import type { Signal } from "@preact/signals";
-import { Button } from "../../components/Button.tsx";
 import CircularMeter from "../../components/CircularMeter.tsx";
 
 interface IntakeProps {

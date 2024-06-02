@@ -1,27 +1,39 @@
 import { h, FunctionComponent } from 'preact';
-import { useState } from 'preact/hooks';
-import { IS_BROWSER } from '$fresh/runtime.ts';
+import { useState, useEffect } from 'preact/hooks';
+
 import { CalenderDayCard } from '../../components/CalenderDayCard.tsx';
 import {ArrowButton} from "../../components/ArrowButton.tsx";
+import MonthYearSelector from "../../components/MonthYearSelector.tsx";
 
 interface CarouselProps {
-    month: number;
-    year: number;
+    initialMonth: number;
+    initialYear: number;
 }
 
 const getDaysInMonth = (year: number, month: number): number => {
     return new Date(year, month, 0).getDate();
 };
 
-const CalendarCarousel: FunctionComponent<CarouselProps> = ({year, month}) => {
-    const totalDays = getDaysInMonth(year, month);
+const CalendarCarousel: FunctionComponent<CarouselProps> = ({initialYear, initialMonth}) => {
 
     // CalendarCarousel state initialization
     const [leftMostDate, setLeftMostDate] = useState(1);
     const [rightMostDate, setRightMostDate] = useState(7);
+    const [totalDays, setTotalDays] = useState(28);
+    const [year, setYear] = useState(initialYear)
+    const[month, setMonth] = useState(initialMonth)
 
-    // Method to "slide" to next 7 days
-    // Method to "slide" to next 7 days
+    useEffect(() => {
+        const getDaysInMonth = (year: number, month: number): number => {
+            return new Date(year, month+1, 0).getDate();
+        };
+        setTotalDays(getDaysInMonth(year, month));
+
+        // Reset carousel to beginning of the month
+        setLeftMostDate(1);
+        setRightMostDate(7);
+    }, [year, month]);
+
     const nextSevenDays = () => {
         if (rightMostDate + 7 <= totalDays) {
             setLeftMostDate(leftMostDate+7);
@@ -32,8 +44,6 @@ const CalendarCarousel: FunctionComponent<CarouselProps> = ({year, month}) => {
             setRightMostDate(totalDays);
         }
     };
-
-// Method to "slide" to previous 7 days
     const previousSevenDays = () => {
         if (leftMostDate - 7 >= 1) {
             setLeftMostDate(leftMostDate - 7);
@@ -45,9 +55,19 @@ const CalendarCarousel: FunctionComponent<CarouselProps> = ({year, month}) => {
         }
     };
 
+    const onYearChange = (selectedYear: number) => {
+        setYear(selectedYear)
+    };
+
+    const onMonthChange = (selectedMonth: number) => {
+        setMonth(selectedMonth)
+    };
+
     let visibleDays = Array.from({length: 7}, (_, i) => leftMostDate + i);
 
     return (
+        <div>
+            <MonthYearSelector year={year} month={month} onYearChange={onYearChange} onMonthChange={onMonthChange}/>
         <div style={{
             display: 'flex',
             padding: '.1rem',
@@ -67,6 +87,7 @@ const CalendarCarousel: FunctionComponent<CarouselProps> = ({year, month}) => {
             ))}
             <ArrowButton onClick={nextSevenDays} isLeft={false}/>
             <h1>{totalDays}</h1>
+        </div>
         </div>
     );
 };

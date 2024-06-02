@@ -22,7 +22,7 @@ export default function Home() {
             </div>
             <div class="max-w-screen-md mx-auto flex flex-col items-center justify-center">
                 {/*Weird Bug with the Date Class  suppose to be zero based but should use 1 based for month*/}
-                <CalendarCarousel year={2024} month={5}/>
+                <CalendarCarousel initialYear={2024} initialMonth={0}/>
                 <h1 class="text-4xl font-bold">Meal Diary for this Day...</h1>
                 <p class="my-4">
                     Food Details Here in Boxes

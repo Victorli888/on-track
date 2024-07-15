@@ -5,6 +5,7 @@ type CalendarDayCardProps = {
     day: number;
 };
 
+// TODO: Each of these cards should be color coded for Pass, Fail, Empty
 export const CalenderDayCard: FunctionComponent<CalendarDayCardProps> = ({ day }) => {
     return (
         <div className="flex items-center justify-center bg-blue-50 hover:bg-blue-100

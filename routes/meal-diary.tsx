@@ -25,6 +25,7 @@ export default function Home() {
                 {/*Weird Bug with the Date Class  suppose to be zero based but should use 1 based for month*/}
                 <CalendarCarousel initialYear={2024} initialMonth={0}/>
                 {/*<DiaryCard calorieGoal={2300} proteinGoal={130}/>*/}
+                {/*TODO: Meal Data will be fetched from a sql data base*/}
                 <DiaryCard calorieGoal={2300} proteinGoal={130} mealData={[
                     {
                         "food": "Oatmeal with Fruits",

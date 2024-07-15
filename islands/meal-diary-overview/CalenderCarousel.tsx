@@ -14,6 +14,8 @@ const getDaysInMonth = (year: number, month: number): number => {
     return new Date(year, month, 0).getDate();
 };
 
+// TODO: We should fetch data for the month using SQL Query, Fetch only when we change the By Month or year
+
 const CalendarCarousel: FunctionComponent<CarouselProps> = ({initialYear, initialMonth}) => {
 
     // CalendarCarousel state initialization
